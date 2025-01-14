@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Domain
+namespace Domain.Entities
 {
-    public class Location
+    public class Pallet
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string Row { get; set; }
+        public Product Product { get; set; }
 
-        public string Column{ get; set; }
+        public DateTime Date { get; set; }
 
-        public string Status { get; set; }
+        public Location? Location { get; set; }
     }
 }

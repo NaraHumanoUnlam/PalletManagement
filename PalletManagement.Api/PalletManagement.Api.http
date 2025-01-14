@@ -1,0 +1,6 @@
+@PalletManagement.Api_HostAddress = http://localhost:5109
+
+GET {{PalletManagement.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

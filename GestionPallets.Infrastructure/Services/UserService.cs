@@ -1,0 +1,53 @@
+﻿using GestionPallets.Application.Common;
+using GestionPallets.Domain.Entities;
+using GestionPallets.Infrastructure.Persistence;
+
+namespace GestionPallets.Infrastructure.Services
+{
+    public class UserService : IUser
+    {
+
+        private readonly AppDbContext _context;
+
+        public UserService(AppDbContext context)
+        {
+            _context = context;
+        }
+        public Task<int> CreateUser(UserEntity user)
+        {
+            var userNew = _context.Users.Add(user);
+            return _context.SaveChangesAsync();
+        }
+
+        public Task<int> DeleteUser(int userId)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            return Task.FromResult(userId);
+        }
+
+        public Task<IEnumerable<UserEntity>> GetAllUsers()
+        {
+            return Task.FromResult(_context.Users.AsEnumerable());
+        }
+
+
+        public Task<int> UpdateUser(UserEntity user)
+        {
+            var existingUser = _context.Users.FirstOrDefault(x => x.Id == user.Id);
+            if (existingUser != null)
+            {
+                existingUser.Username = user.Username;
+                existingUser.Token = user.Token;
+                existingUser.TokenExpiration = user.TokenExpiration;
+                return _context.SaveChangesAsync();
+            }
+            return Task.FromResult(user.Id);
+        }
+
+        public Task<UserEntity> ValidateUserAsync(string username, string password)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Username == username && x.Password == password);
+            return Task.FromResult(user);
+        }
+    }
+}

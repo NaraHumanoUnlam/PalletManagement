@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using GetionPallets.Application.Command.Create;
-using GetionPallets.Application.Queries;
-using GetionPallets.Application.Command.Update;
-using GetionPallets.Application.Command.Delete;
 using Microsoft.AspNetCore.Authorization;
+using GestionPallets.Application.Command.Create;
+using GestionPallets.Application.Command.Update;
+using GestionDepallet.Application.Queries;
+using GestionPallets.Application.Command.Delete;
 
 namespace GetionPallets.Api.Controllers
 {
@@ -43,7 +43,7 @@ namespace GetionPallets.Api.Controllers
         /// 
         /// </remarks>
         /// <returns></returns>
-        public async Task<IActionResult> GetAllStocks()
+        public async Task<IActionResult> GetAll()
         {
            return Ok(await _mediator.Send(new GetAll()));
         }

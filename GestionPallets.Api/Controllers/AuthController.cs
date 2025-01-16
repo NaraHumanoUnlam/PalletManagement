@@ -1,5 +1,5 @@
-﻿using GetionPallets.Application.Common;
-using GetionPallets.Domain.Entities;
+﻿using GestionPallets.Application.Common;
+using GestionPallets.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GetionPallets.Api.Controllers

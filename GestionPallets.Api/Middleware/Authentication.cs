@@ -1,5 +1,5 @@
 ﻿using FirebaseAdmin.Auth;
-using GetionPallets.Infrastructure.Persistence;
+using GestionPallets.Infrastructure.Persistence;
 
 namespace GetionPallets.Api.Middleware
 {

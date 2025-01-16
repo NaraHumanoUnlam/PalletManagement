@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GestionDeStock.Application\GestionPallets.Application.csproj" />
-    <ProjectReference Include="..\GestionDeStock.Domain\GestionPallets.Domain.csproj" />
-    <ProjectReference Include="..\GestionDeStock.Infrastructure\GestionPallets.Infrastructure.csproj" />
+    <ProjectReference Include="..\GestionPallets.Application\GestionPallets.Application.csproj" />
+    <ProjectReference Include="..\GestionPallets.Domain\GestionPallets.Domain.csproj" />
+    <ProjectReference Include="..\GestionPallets.Infrastructure\GestionPallets.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
